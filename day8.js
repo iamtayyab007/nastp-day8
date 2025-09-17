@@ -188,3 +188,65 @@ const btn10 = document.createElement("button");
 btn10.innerText = "Remove duplicates";
 btn10.onclick = () => showResult([1, 2, 2, 3, 3, 4,4,4,4,3,5,6,7,8], removeDuplicates([1, 2, 2, 3, 3, 4,4,4,4,3,5,6,7,8]), "Removed duplicates");
 buttonsContainer.appendChild(btn10);
+
+// 11. Sort array
+const btn11 = document.createElement("button");
+btn11.innerText = "Sort array (ascending)";
+btn11.onclick = () => showResult(numbers, sortArray(numbers), "Sorted the array in ascending order");
+buttonsContainer.appendChild(btn11);
+
+// helper function
+function sortArray(arr) {
+  return [...arr].sort((a, b) => a - b);
+}
+
+// 12. Find maximum
+const btn12 = document.createElement("button");
+btn12.innerText = "Find maximum";
+btn12.onclick = () => showResult(numbers, getMax(numbers), "Found the maximum number");
+buttonsContainer.appendChild(btn12);
+
+// helper function
+function getMax(arr) {
+  return Math.max(...arr);
+}
+
+
+// 13. Find minimum
+const btn13 = document.createElement("button");
+btn13.innerText = "Find minimum";
+btn13.onclick = () => showResult(numbers, getMin(numbers), "Found the minimum number");
+buttonsContainer.appendChild(btn13);
+
+// helper function
+function getMin(arr) {
+  return Math.min(...arr);
+}
+
+// 14. Shuffle array
+const btn14 = document.createElement("button");
+btn14.innerText = "Shuffle array";
+btn14.onclick = () => showResult(numbers, shuffleArray(numbers), "Shuffled the array randomly");
+buttonsContainer.appendChild(btn14);
+
+// helper function
+function shuffleArray(arr) {
+  let copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+
+// 15. Square numbers
+const btn15 = document.createElement("button");
+btn15.innerText = "Square numbers";
+btn15.onclick = () => showResult(numbers, squareNumbers(numbers), "Squared all numbers");
+buttonsContainer.appendChild(btn15);
+
+// helper function
+function squareNumbers(arr) {
+  return arr.map(num => num * num);
+}
