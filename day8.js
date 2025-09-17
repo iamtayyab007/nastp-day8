@@ -189,6 +189,95 @@ btn10.innerText = "Remove duplicates";
 btn10.onclick = () => showResult([1, 2, 2, 3, 3, 4,4,4,4,3,5,6,7,8], removeDuplicates([1, 2, 2, 3, 3, 4,4,4,4,3,5,6,7,8]), "Removed duplicates");
 buttonsContainer.appendChild(btn10);
 
+
+function findMax(arr) {
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+const btn11 = document.createElement("button");
+btn11.innerText = "Find Maximum";
+btn11.onclick = () => showResult(numbers, findMax(numbers), "Maximum number in array");
+buttonsContainer.appendChild(btn11);
+
+function findMin(arr) {
+  let min = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+}
+
+const btn12 = document.createElement("button");
+btn12.innerText = "Find Minimum";
+btn12.onclick = () => showResult(numbers, findMin(numbers), "Minimum number in array");
+buttonsContainer.appendChild(btn12);
+
+function findAverage(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+}
+
+// Button
+const btn13 = document.createElement("button");
+btn13.innerText = "Find Average";
+btn13.onclick = () => showResult(numbers, findAverage(numbers), "Average of numbers");
+buttonsContainer.appendChild(btn13);
+
+function squareNumbers(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr[i] = arr[i] * arr[i];
+  }
+  return newArr;
+}
+
+// Button
+const btn17 = document.createElement("button");
+btn17.innerText = "Square Numbers";
+btn17.onclick = () => showResult(numbers, squareNumbers(numbers), "Squared all numbers");
+buttonsContainer.appendChild(btn17);
+
+function sortAscending(arr) {
+  let newArr = [...arr];
+  for (let i = 0; i < newArr.length; i++) {
+    for (let j = i + 1; j < newArr.length; j++) {
+      if (newArr[j] < newArr[i]) {
+        let temp = newArr[i];
+        newArr[i] = newArr[j];
+        newArr[j] = temp;
+      }
+    }
+  }
+  return newArr;
+}
+
+// Button
+const btn18 = document.createElement("button");
+btn18.innerText = "Sort Ascending";
+btn18.onclick = () => showResult(numbers, sortAscending(numbers), "Sorted in ascending order");
+buttonsContainer.appendChild(btn18);
+
+function sortDescending(arr) {
+  let newArr = sortAscending(arr);
+  return newArr.reverse();
+}
+
+// Button
+const btn19 = document.createElement("button");
+btn19.innerText = "Sort Descending";
+btn19.onclick = () => showResult(numbers, sortDescending(numbers), "Sorted in descending order");
+buttonsContainer.appendChild(btn19);
 // 11. Sort array
 const btn11 = document.createElement("button");
 btn11.innerText = "Sort array (ascending)";
@@ -250,3 +339,4 @@ buttonsContainer.appendChild(btn15);
 function squareNumbers(arr) {
   return arr.map(num => num * num);
 }
+
