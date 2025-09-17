@@ -205,23 +205,23 @@ btn10.onclick = () =>
   );
 buttonsContainer.appendChild(btn10);
 
-// 11. Find Second Largest
+// 16. Find Second Largest
 function secondLargest(arr) {
   const unique = [...new Set(arr)];
   unique.sort((a, b) => b - a);
   return unique.length > 1 ? unique[1] : null;
 }
-const btn11 = document.createElement("button");
-btn11.innerText = "Second Largest";
-btn11.onclick = () =>
+const btn16 = document.createElement("button");
+btn16.innerText = "Second Largest";
+btn16.onclick = () =>
   showResult(
     [10, 5, 8, 10, 7],
     secondLargest([10, 5, 8, 10, 7]),
     "Second Largest Number"
   );
-buttonsContainer.appendChild(btn11);
+buttonsContainer.appendChild(btn16);
 
-// 12. Find Pairs with Given Sum
+// 17. Find Pairs with Given Sum
 function findPairs(arr, target) {
   const pairs = [];
   for (let i = 0; i < arr.length; i++) {
@@ -231,15 +231,15 @@ function findPairs(arr, target) {
   }
   return pairs;
 }
-const btn12 = document.createElement("button");
-btn12.innerText = "Find Pairs (Sum=6)";
-btn12.onclick = () =>
+const btn17 = document.createElement("button");
+btn17.innerText = "Find Pairs (Sum=6)";
+btn17.onclick = () =>
   showResult(
     [2, 4, 3, 5, 7, -1],
     findPairs([2, 4, 3, 5, 7, -1], 6),
     "Pairs with Sum = 6"
   );
-buttonsContainer.appendChild(btn12);
+buttonsContainer.appendChild(btn17);
 
 // 13. Count Frequency
 function countFrequency(arr) {
@@ -248,15 +248,15 @@ function countFrequency(arr) {
     return acc;
   }, {});
 }
-const btn13 = document.createElement("button");
-btn13.innerText = "Count Frequency";
-btn13.onclick = () =>
+const btn18 = document.createElement("button");
+btn18.innerText = "Count Frequency";
+btn18.onclick = () =>
   showResult(
     ["a", "b", "a", "c", "b", "a"],
     countFrequency(["a", "b", "a", "c", "b", "a"]),
     "Frequency Count"
   );
-buttonsContainer.appendChild(btn13);
+buttonsContainer.appendChild(btn18);
 
 // 14. Rotate Array (Right Shift)
 function rotateArray(arr, k) {
@@ -264,34 +264,34 @@ function rotateArray(arr, k) {
   k = k % n; // handle k > n
   return [...arr.slice(n - k), ...arr.slice(0, n - k)];
 }
-const btn14 = document.createElement("button");
-btn14.innerText = "Rotate Array by 2";
-btn14.onclick = () =>
+const btn19 = document.createElement("button");
+btn19.innerText = "Rotate Array by 2";
+btn19.onclick = () =>
   showResult(
     [1, 2, 3, 4, 5],
     rotateArray([1, 2, 3, 4, 5], 2),
     "Array Rotated Right by 2"
   );
-buttonsContainer.appendChild(btn14);
+buttonsContainer.appendChild(btn19);
 
 // 15. Remove Falsy Values (clean array)
 function removeFalsy(arr) {
   return arr.filter(Boolean);
 }
-const btn15 = document.createElement("button");
-btn15.innerText = "Remove Falsy Values";
-btn15.onclick = () =>
+const btn20 = document.createElement("button");
+btn20.innerText = "Remove Falsy Values";
+btn20.onclick = () =>
   showResult(
     [0, 1, false, 2, "", 3, null, undefined, 4, NaN],
     removeFalsy([0, 1, false, 2, "", 3, null, undefined, 4, NaN]),
     "Removed Falsy Values"
   );
-buttonsContainer.appendChild(btn15);
+buttonsContainer.appendChild(btn20);
 
 // 16. Find Difference of Two Arrays
-const btn16 = document.createElement("button");
-btn16.innerText = "Find Difference";
-btn16.onclick = () => {
+const btn21 = document.createElement("button");
+btn21.innerText = "Find Difference";
+btn21.onclick = () => {
   const arr1 = [1, 2, 3, 4, 5];
   const arr2 = [3, 4, 6];
 
@@ -305,4 +305,4 @@ btn16.onclick = () => {
     "Elements present in first array but not in second"
   );
 };
-buttonsContainer.appendChild(btn16);
+buttonsContainer.appendChild(btn21);
